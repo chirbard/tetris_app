@@ -41,22 +41,20 @@ class _MyGameState extends State<MyGame> {
                     width: 60,
                     height: 60,
                   ),
-                  IconButton(
-                    color: const Color(0xFF010101),
-                    onPressed: () {},
-                    icon: const Icon(
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xFF010101),
+                      minimumSize: Size.square(60.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: const Icon(
                       Icons.arrow_upward,
                       color: Colors.white,
                     ),
+                    onPressed: () {},
                   ),
-                  // Container(
-                  //   decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(10),
-                  //     color: const Color(0xFF010101),
-                  //   ),
-                  //   width: 60,
-                  //   height: 60,
-                  // ),
                   Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
