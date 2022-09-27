@@ -25,43 +25,67 @@ class _MyGameState extends State<MyGame> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xFF010101),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xFF010101),
+                      minimumSize: const Size.square(60.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
-                    width: 60,
-                    height: 60,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xFF010101),
+                    child: const Text(
+                      'PLAY',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                      ),
                     ),
-                    width: 60,
-                    height: 60,
+                    onPressed: () {},
                   ),
                   TextButton(
                     style: TextButton.styleFrom(
                       backgroundColor: const Color(0xFF010101),
-                      minimumSize: Size.square(60.0),
+                      minimumSize: const Size.square(60.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
                     child: const Icon(
-                      Icons.arrow_upward,
+                      Icons.arrow_left_rounded,
+                      size: 40,
                       color: Colors.white,
                     ),
                     onPressed: () {},
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: const Color(0xFF010101),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xFF010101),
+                      minimumSize: const Size.square(60.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
                     ),
-                    width: 60,
-                    height: 60,
+                    child: const Icon(
+                      Icons.arrow_right_rounded,
+                      size: 40,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor: const Color(0xFF010101),
+                      minimumSize: const Size.square(60.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    child: const Icon(
+                      Icons.rotate_left_rounded,
+                      size: 30,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {},
                   )
                 ],
               ),
