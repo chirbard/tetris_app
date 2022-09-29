@@ -141,6 +141,10 @@ class _MyGameState extends State<MyGame> {
     const duration = Duration(milliseconds: 400);
     Timer.periodic(duration, (Timer timer) {
       update();
+      if (gameOver()) {
+        timer.cancel();
+        _showGameOverScreen();
+      }
     });
   }
 
@@ -191,6 +195,31 @@ class _MyGameState extends State<MyGame> {
         movingPiece = movingPiece.map((e) => e + 1).toList();
       }
     });
+  }
+
+  bool gameOver() {
+    return landedPieces.any((element) => element < 10);
+  }
+
+  void _showGameOverScreen() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Game Over'),
+          actions: [
+            ElevatedButton(
+              child: const Text('Play Again'),
+              onPressed: () {
+                Navigator.of(context).pop();
+                landedPieces = [];
+                movingPiece = [];
+              },
+            )
+          ],
+        );
+      },
+    );
   }
 
   @override
